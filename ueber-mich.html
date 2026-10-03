@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Über mich | Felix Andergassen Physiotherapie</title>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              petrol: '#295568',
+              'petrol-hover': '#1e3f4e',
+              'petrol-light': '#e9f1f5',
+              dark: '#1d323d',
+              mint: '#c6ebd9',
+              'mint-text': '#1d6f4c',
+              bg: '#f8fafc',
+              slate: '#5b6b75'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1d323d;
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-slate-700 antialiased min-h-screen flex flex-col justify-between">
+
+<!-- BEGIN: MainHeader -->
+<header class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100" data-purpose="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+    
+    <!-- Left Group: Mobile Menu Toggle Button (3 Striche) + Logo -->
+    <div class="flex items-center gap-3">
+      <!-- Mobile Burger Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Menü öffnen" class="md:hidden p-2 text-brand-petrol hover:bg-slate-100 rounded-lg transition-colors focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+
+      <!-- Brand Logo & Standorte Hint -->
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:space-x-4">
+        <a class="text-lg sm:text-xl font-bold text-brand-petrol tracking-tight hover:opacity-90 transition-opacity" href="index.html">
+          Felix Andergassen Physiotherapie
+        </a>
+        <span class="hidden sm:inline-block text-xs font-medium text-slate-400 mt-0.5 tracking-normal">
+          • Standorte: Frankfurt am Main • Obertshausen
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation & Main CTA -->
+    <nav aria-label="Hauptnavigation" class="flex items-center space-x-8">
+      <ul class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-600">
+        <li><a class="hover:text-brand-petrol transition-colors" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="leistungen.html">Leistungen</a></li>
+        <li><a class="text-brand-petrol font-semibold pb-1 border-b-2 border-brand-petrol" href="ueber-mich.html">Über mich</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white bg-brand-petrol hover:bg-brand-petrol-hover transition shadow-sm" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+        Termin buchen
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu Dropdown (Smartphone-Aufklappmenü) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="index.html">Home</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="leistungen.html">Leistungen</a>
+    <a class="block py-2 text-base font-semibold text-brand-petrol" href="ueber-mich.html">Über mich</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="kontakt.html">Kontakt</a>
+  </div>
+</header>
+<!-- END: MainHeader -->
+
+<main class="flex-grow">
+<!-- BEGIN: HeroProfileSection -->
+<section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-20 md:pt-20 md:pb-24" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Column: Biography & Intro -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Badge -->
+<div class="inline-block">
+<span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider text-[#1d6f4c] bg-[#c6ebd9] uppercase">
+              Physiotherapeut und Sektoraler Heilpraktiker
+            </span>
+</div>
+<!-- Description Paragraphs -->
+<div class="space-y-5 text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+<p>
+              Individuelle Behandlungskonzepte für nachhaltige Gesundheit und Mobilität. Seit über 15 Jahren begleite ich Patienten auf ihrem Weg zu besserer Lebensqualität.
+            </p>
+<p class="text-slate-700 font-medium">
+              Felix Andergassen – Ihr Partner für nachhaltige Gesundheit</p>
+</div>
+</div>
+<!-- Right Column: Profile Image -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative w-72 sm:w-80 md:w-96 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/70 border border-slate-100 aspect-[4/5] bg-slate-50">
+<img alt="Felix Andergassen" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBumBLa902lnr15PyNMe8fxFK2g-0hRsMZWtyBNR4rYFDzEkUiJeQ7CcHAVVgQ_lVnSuDoug-lq1ci-jNtk9_jaTO3DMZzywbkpu7CDHwFaVitbe_xWTXpXxlaWIHNU8mIlNiIV_N0yK7prX7cUhv21cZf8FUymkmc2U9I-2znzkK600MPKQ5ZgyXDStI8Dyw3FZQJQhfj21nn7bQnlkESuuOvGp2PasNu4Ol3J34VuKc8ChwIn1eNJlzlA2tik4Cd18A">
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroProfileSection -->
+
+<!-- BEGIN: AcademicPathSection -->
+<section class="bg-[#f2f8fa] py-20 border-y border-slate-100">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<!-- Section Header -->
+<div class="text-center mb-14">
+<h2 class="text-lg md:text-xl font-medium text-slate-700 tracking-wide">
+            Vita &amp; Akademischer Weg
+          </h2>
+<div class="w-12 h-0.5 bg-brand-petrol mx-auto mt-3 rounded-full"></div>
+</div>
+<!-- Vita 6-Card Timeline Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Vita Item 1 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              1
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Physiotherapie 2010</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Studium der Physiotherapie (Bachelor Abschluss) an der Claudiana–Landesfachhochschule für Gesundheitsberufe in Bozen, Italien.
+            </p>
+</div>
+<!-- Vita Item 2 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              2
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Fitness &amp; Training 2011</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Personal Fitness Trainer (ISSA Italia) CFT 1 in Mailand, Italien.
+            </p>
+</div>
+<!-- Vita Item 3 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              3
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Osteopathische Qualifikation 2018</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Abgeschlossene Ausbildung in der Osteopathie an der SFO – Schule für Osteopathie GmbH in Frankfurt am Main.
+            </p>
+</div>
+<!-- Vita Item 4 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              4
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Trainer C-Lizenz 2020</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Erwerb der Trainer C-Lizenz in Deutschland.
+            </p>
+</div>
+<!-- Vita Item 5 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              5
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Sektoraler Heilpraktiker für Physiotherapie 2026</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Gesundheitsamt Dietzenbach
+            </p>
+</div>
+<!-- Vita Item 6 -->
+<div class="bg-white rounded-2xl p-7 shadow-sm border border-slate-100 flex flex-col justify-start hover:shadow-md transition-shadow">
+<div class="w-9 h-9 rounded-full bg-brand-petrol text-white flex items-center justify-center font-semibold text-sm mb-5 shadow-sm">
+              6
+            </div>
+<h3 class="text-slate-800 font-semibold text-sm mb-2">Praxis &amp; Erfahrung</h3>
+<p class="text-slate-500 text-xs sm:text-sm leading-relaxed">
+              Berufserfahrung im Bereich Chirurgie und Orthopädie.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AcademicPathSection -->
+
+<!-- BEGIN: ExpertiseSection -->
+<section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<!-- Heading & Language Box Wrapper -->
+<div class="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12 gap-8">
+<div>
+<h2 class="text-xl sm:text-2xl font-semibold text-slate-800 mb-2">Weiterbildungen &amp; Expertise</h2>
+<p class="text-slate-500 text-sm sm:text-base">Spezialisierte Kenntnisse für eine umfassende Betreuung.</p>
+</div>
+<!-- Language Skills Card -->
+<div class="bg-[#f0f9f6] rounded-2xl p-5 sm:p-6 border border-[#d2ece4] flex items-start space-x-4 max-w-sm">
+<div class="text-brand-petrol mt-0.5">
+<svg class="w-6 h-6 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="m5 8 6 6"></path>
+<path d="m4 14 6-6 2-3"></path>
+<path d="M2 5h12"></path>
+<path d="M7 2h1"></path>
+<path d="m22 22-5-10-5 10"></path>
+<path d="M14 18h6"></path>
+</svg>
+</div>
+<div>
+<div class="text-xs font-bold tracking-wider text-brand-petrol uppercase mb-1.5">Sprachkenntnisse</div>
+<ul class="text-slate-700 text-sm space-y-0.5 font-normal">
+<li>Deutsch</li>
+<li>Englisch</li>
+<li>Italienisch</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Expertise Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Expertise Card 1: Manuelle Therapie -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m15.5 8.5-7 7m0-7 7 7"></path>
+<circle cx="8" cy="8" r="2"></circle>
+<circle cx="16" cy="8" r="2"></circle>
+<circle cx="8" cy="16" r="2"></circle>
+<circle cx="16" cy="16" r="2"></circle>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">Manuelle Therapie</h3>
+<p class="text-slate-600 text-sm leading-relaxed max-w-xl">
+            Gezielte Behandlung von Funktionsstörungen des Bewegungsapparates (Gelenke, Muskeln und Nerven).
+          </p>
+</div>
+
+<!-- Expertise Card 2: Fitness & Training -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="3"></circle>
+<path d="M6.5 6.5l3.5 3.5"></path>
+<path d="M14 14l3.5 3.5"></path>
+<path d="m18 2 4 4"></path>
+<path d="m2 18 4 4"></path>
+<path d="M4 14l6-6"></path>
+<path d="M14 20l6-6"></path>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">Fitness &amp; Training</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Individuelle Trainingssteuerung und funktionelle Übungen zur Steigerung von Belastbarkeit, Kraft und Mobilität.</p>
+</div>
+
+<!-- Expertise Card 3: KGG -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="m6.5 6.5 11 11"></path>
+<path d="m21 21-1-1a2 2 0 0 0-2.8 0L16 21"></path>
+<path d="m3 3 1 1a2 2 0 0 0 2.8 0L8 3"></path>
+<path d="m18 22 4-4"></path>
+<path d="m2 6 4-4"></path>
+<path d="m13 15 2 2"></path>
+<path d="m9 11-2-2"></path>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">KGG</h3>
+<p class="text-slate-500 text-sm leading-relaxed">
+            Krankengymnastik am Gerät zur Verbesserung von Kraft, Ausdauer und Beweglichkeit.
+          </p>
+</div>
+
+<!-- Expertise Card 4: MLD nach Dr. Vodder -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">MLD nach Dr. Vodder</h3>
+<p class="text-slate-500 text-sm leading-relaxed">
+            Manuelle Lymphdrainage zur Entstauung von Gewebe und Unterstützung des Lymphsystems.
+          </p>
+</div>
+
+<!-- Expertise Card 5: Typaldos (FDM) -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+<polyline points="2 17 12 22 22 17"></polyline>
+<polyline points="2 12 12 17 22 12"></polyline>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">Typaldos (FDM)</h3>
+<p class="text-slate-500 text-sm leading-relaxed">
+            Fasziendistorsionsmodell zur Behandlung von Schmerzen durch Korrektur von Faszienverformungen.
+          </p>
+</div>
+
+<!-- Expertise Card 6: Wirbeltherapie nach DORN -->
+<div class="bg-[#f8fafc] hover:bg-slate-50/80 rounded-2xl p-7 border border-slate-100 transition-colors">
+<div class="text-brand-petrol mb-4">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+<path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+<path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+<path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+</svg>
+</div>
+<h3 class="text-slate-800 font-semibold text-base mb-2">Wirbeltherapie nach DORN</h3>
+<p class="text-slate-500 text-sm leading-relaxed">
+            Sanfte Wirbel- und Gelenkbehandlung zur Korrektur von Fehlstellungen der Wirbelsäule.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: ExpertiseSection -->
+</main>
+
+<!-- BEGIN: MainFooter -->
+<footer class="bg-white border-t border-slate-100 text-slate-600 text-sm py-14">
+<div class="max-w-7xl mx-auto px-6 sm:px-8" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-slate-100">
+<div class="space-y-4">
+<h4 class="text-lg font-bold text-slate-900">
+            Felix Andergassen Physiotherapie
+          </h4>
+<p class="text-slate-500 text-sm">Praxen in Frankfurt am Main und Obertshausen</p>
+<ul class="space-y-2.5 pt-2 text-xs sm:text-sm text-slate-600">
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://wa.me/4915129744965" rel="noopener noreferrer" target="_blank">+49 1512 9744965 (Nur WhatsApp Business Kontakt)</a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="mailto:felix@physioandergassen.de">
+                felix@physioandergassen.de
+              </a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+                Doctolib Terminvereinbarung
+              </a>
+</li>
+</ul>
+</div>
+<nav class="flex items-center gap-8 text-sm font-medium self-start lg:self-end">
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.0.18aZ-de.html" rel="noopener noreferrer" target="_blank">Impressum</a>
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.8V.18aZ.html" rel="noopener noreferrer" target="_blank">Datenschutz</a>
+<a class="text-brand-petrol font-semibold" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+<!-- JavaScript für das Auf- und Zuklappen des mobilen Menüs -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+</body>
+</html>

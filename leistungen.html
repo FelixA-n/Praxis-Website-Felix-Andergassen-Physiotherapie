@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Leistungen | Felix Andergassen Physiotherapie</title>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              petrol: '#295568',
+              'petrol-hover': '#1e3f4e',
+              'petrol-light': '#e9f1f5',
+              dark: '#1d323d',
+              mint: '#c6ebd9',
+              'mint-text': '#1d6f4c',
+              bg: '#f8fafc',
+              slate: '#5b6b75'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1d323d;
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+  </style>
+<style data-purpose="custom-enhancements">
+    .service-card {
+      box-shadow: 0 4px 20px -2px rgba(41, 85, 104, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px -4px rgba(41, 85, 104, 0.1);
+    }
+    .pricing-card-petrol {
+      background-color: #295568;
+      box-shadow: 0 10px 25px -5px rgba(41, 85, 104, 0.25);
+    }
+    .pricing-card-mint {
+      background-color: #c6ebd9;
+      box-shadow: 0 10px 25px -5px rgba(198, 235, 217, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-brand-bg text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+<!-- BEGIN: MainHeader -->
+<header class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100" data-purpose="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+    
+    <!-- Left Group: Mobile Menu Toggle Button (3 Striche) + Logo -->
+    <div class="flex items-center gap-3">
+      <!-- Mobile Burger Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Menü öffnen" class="md:hidden p-2 text-brand-petrol hover:bg-slate-100 rounded-lg transition-colors focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+
+      <!-- Brand Logo & Standorte Hint -->
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:space-x-4">
+        <a class="text-lg sm:text-xl font-bold text-brand-petrol tracking-tight hover:opacity-90 transition-opacity" href="index.html">
+          Felix Andergassen Physiotherapie
+        </a>
+        <span class="hidden sm:inline-block text-xs font-medium text-slate-400 mt-0.5 tracking-normal">
+          • Standorte: Frankfurt am Main • Obertshausen
+        </span>
+      </div>
+    </div>
+
+    <!-- Desktop Navigation & Main CTA -->
+    <nav aria-label="Hauptnavigation" class="flex items-center space-x-8">
+      <ul class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-600">
+        <li><a class="hover:text-brand-petrol transition-colors" href="index.html">Home</a></li>
+        <li><a class="text-brand-petrol font-semibold pb-1 border-b-2 border-brand-petrol" href="leistungen.html">Leistungen</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="ueber-mich.html">Über mich</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white bg-brand-petrol hover:bg-brand-petrol-hover transition shadow-sm" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+        Termin buchen
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu Dropdown (Smartphone-Aufklappmenü) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="index.html">Home</a>
+    <a class="block py-2 text-base font-semibold text-brand-petrol" href="leistungen.html">Leistungen</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="ueber-mich.html">Über mich</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="kontakt.html">Kontakt</a>
+  </div>
+</header>
+<!-- END: MainHeader -->
+
+<main class="flex-grow">
+<!-- BEGIN: ServicesIntroSection -->
+<section class="pt-16 pb-12 bg-white" data-purpose="services-introduction">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<h1 class="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">Meine Leistungen</h1>
+<p class="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+          Kombinierte Therapieformen für Ihre Behandlung. Jede Behandlung wird individuell auf Ihre Bedürfnisse und Krankheitsgeschichte abgestimmt.
+        </p>
+</div>
+<!-- 4 Service Cards Grid -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Krankengymnastik -->
+<div class="service-card bg-white rounded-2xl p-7 border border-slate-100 flex flex-col justify-start">
+<div class="w-10 h-10 mb-5 text-brand-petrol flex items-center justify-start">
+<svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M6 4v16M18 4v16M3 7h3v10H3zM18 7h3v10h-3zM6 12h12"></path>
+</svg>
+</div>
+<h2 class="text-lg font-semibold text-slate-900 mb-3">Krankengymnastik</h2>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Gezielte Übungen zur Verbesserung der Beweglichkeit, Kraft und Koordination bei funktionellen Störungen.
+            </p>
+</div>
+<!-- Card 2: Manuelle Therapie -->
+<div class="service-card bg-white rounded-2xl p-7 border border-slate-100 flex flex-col justify-start">
+<div class="w-10 h-10 mb-5 text-brand-petrol flex items-center justify-start">
+<svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M16 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 18v3h20v-3M9 11l3 3 4-4M5 7a4 4 0 0 1 7.07-2.6L14 6l4 4"></path>
+<circle cx="16" cy="4" r="2"></circle>
+<path d="M18 10l-4-4-2.5 1.5A3 3 0 0 0 10 10v4l2 2"></path>
+</svg>
+</div>
+<h2 class="text-lg font-semibold text-slate-900 mb-3">Manuelle Therapie</h2>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Spezialisierte Handgrifftechniken zur Mobilisation blockierter Gelenke und Linderung von muskulären Dysbalancen.
+            </p>
+</div>
+<!-- Card 3: Massage -->
+<div class="service-card bg-white rounded-2xl p-7 border border-slate-100 flex flex-col justify-start">
+<div class="w-10 h-10 mb-5 text-brand-petrol flex items-center justify-start">
+<svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M7 3v4M7 11v10M11 3v4M11 11v10M15 3v18M19 7v10"></path>
+<path d="M3 7h18"></path>
+</svg>
+</div>
+<h2 class="text-lg font-semibold text-slate-900 mb-3">Massage</h2>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Durchblutungsfördernde Techniken zur Lockerung verspannter Muskulatur und Förderung der Regeneration.
+            </p>
+</div>
+<!-- Card 4: Lymphdrainage -->
+<div class="service-card bg-white rounded-2xl p-7 border border-slate-100 flex flex-col justify-start">
+<div class="w-10 h-10 mb-5 text-brand-petrol flex items-center justify-start">
+<svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24">
+<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-semibold text-slate-900 mb-3">Lymphdrainage</h2>
+<p class="text-sm text-slate-600 leading-relaxed">
+              Sanfte Entstauungstherapie zur Anregung des Lymphabflusses bei Ödemen und nach operativen Eingriffen.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesIntroSection -->
+
+<!-- BEGIN: PricingSection -->
+<section class="py-16 bg-white" data-purpose="pricing-overview">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto">
+<h2 class="text-3xl font-semibold text-slate-900 tracking-tight">Preisübersicht</h2>
+<p class="mt-3 text-slate-600 text-base">Transparente Konditionen für Privatpatienten und Selbstzahler.</p>
+</div>
+<!-- Preislisten Container -->
+<div class="mt-14 space-y-12">
+<div class="space-y-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Card Privatpatienten -->
+    <div class="pricing-card-petrol rounded-2xl p-7 text-white flex flex-col justify-between items-center text-center">
+      <div class="flex flex-col items-center">
+        <div class="w-12 h-12 mb-4 rounded-xl bg-white/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h4 class="text-xl font-medium tracking-tight mb-2">Preisliste Privatpatienten</h4>
+        <p class="text-slate-100/90 text-sm max-w-xs leading-relaxed mb-6">Detaillierte Übersicht für die private Krankenversicherung.</p>
+      </div>
+      <a class="inline-flex items-center space-x-2 px-6 py-2.5 bg-white text-slate-800 text-sm font-medium rounded-full shadow-sm hover:bg-slate-50 transition-colors" href="honorarvereinbarung-privatzahler.pdf" target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+        <span>Preisliste ansehen (PDF)</span>
+      </a>
+    </div>
+
+    <!-- Card Selbstzahler -->
+    <div class="pricing-card-mint rounded-2xl p-7 text-slate-900 flex flex-col justify-between items-center text-center">
+      <div class="flex flex-col items-center">
+        <div class="w-12 h-12 mb-4 rounded-xl bg-white/40 flex items-center justify-center">
+          <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h4 class="text-xl font-medium tracking-tight mb-2">Preisliste Selbstzahler</h4>
+        <p class="text-slate-700 text-sm max-w-xs leading-relaxed mb-6">Transparente Pauschalpreise ohne Rezept.</p>
+      </div>
+      <a class="inline-flex items-center space-x-2 px-6 py-2.5 bg-white text-slate-800 text-sm font-medium rounded-full shadow-sm hover:bg-slate-50 transition-colors" href="honorarvereinbarung-selbstzahler.pdf" target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+        <span>Preisliste ansehen (PDF)</span>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Legal notice about GebüTh -->
+<p class="mt-8 text-center text-xs text-slate-500 italic max-w-2xl mx-auto leading-relaxed">
+          Die Abrechnung erfolgt auf Grundlage der Gebührenübersicht für Therapeuten (GebüTh). Bitte beachten Sie, dass die Erstattung durch private Krankenversicherungen oder Zusatzversicherungen vom jeweiligen individuellen Versicherungstarif abhängt und unter Umständen nur anteilig oder bis zu den vertraglich vereinbarten Höchstsätzen erfolgt.
+        </p>
+
+<!-- BEGIN: QualityTimeSection -->
+<div class="mt-14 bg-[#f4f7f8] rounded-2xl p-8 sm:p-10 text-center max-w-3xl mx-auto border border-slate-100">
+<h3 class="text-2xl font-semibold text-slate-800 tracking-tight">Qualität braucht Zeit</h3>
+<p class="mt-4 text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">Transparente Konditionen für Privatpatienten und Selbstzahler.</p>
+<div class="mt-6 space-y-2.5 inline-block text-left text-sm text-slate-700">
+<div class="flex items-center space-x-2.5">
+<svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" stroke-width="2"></circle>
+<path d="M12 6v6l4 2" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+<span><strong>Reguläre Behandlungen:</strong> 40 – 60 Minuten für maximale Qualität und Ruhe.</span>
+</div>
+<div class="flex items-center space-x-2.5">
+<svg class="w-4 h-4 text-slate-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span><strong>Manuelle Lymphdrainage:</strong> Individuell auf den medizinischen Bedarf angepasst.</span>
+</div>
+</div>
+<p class="mt-6 text-sm font-medium text-brand-petrol italic">Transparente Konditionen für Privatpatienten und Selbstzahler.</p>
+</div>
+<!-- END: QualityTimeSection -->
+</div>
+</section>
+<!-- END: PricingSection -->
+
+<!-- BEGIN: HeilpraktikerSection -->
+<section class="py-20 bg-[#eaf4ef]/70" data-purpose="sectoral-heilpraktiker">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<!-- Medical Cross Badge -->
+<div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-petrol text-white mb-6 shadow-sm">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6V4z"></path>
+</svg>
+</div>
+<h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
+          Sektoraler Heilpraktiker für Physiotherapie
+        </h2>
+<div class="mt-6 space-y-4 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
+<p class="font-medium text-slate-800">
+            Nutzen Sie den Vorteil des Direktzugangs: Für Ihre physiotherapeutische Behandlung ist kein vorheriger Arztbesuch und kein Rezept erforderlich.
+          </p>
+<p class="text-sm sm:text-base text-slate-600">
+            Als <strong class="text-slate-800">sektoraler Heilpraktiker für Physiotherapie</strong> bin ich qualifiziert, Diagnosen eigenständig zu stellen und die passende Therapie direkt einzuleiten.</p>
+</div>
+<!-- Insurance info block -->
+<div class="mt-10 pt-8 border-t border-slate-200/80 max-w-xl mx-auto">
+<p class="text-xs uppercase tracking-wider font-semibold text-slate-600 mb-2">Hinweis zur Abrechnung:</p>
+<p class="text-xs text-slate-600 leading-relaxed">
+            Eine Erstattung der Kosten durch Ihre Versicherung ist in der Regel möglich, sofern Sie über eine entsprechende <span class="font-medium text-slate-700">Heilpraktiker-Zusatzversicherung</span> verfügen oder dieser Leistungsbaustein für <span class="font-medium text-slate-700">sektorale Heilpraktiker der Physiotherapie</span> Teil Ihres privaten Versicherungsvertrages ist. Bitte prüfen Sie dies vorab mit Ihrem Versicherer.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: HeilpraktikerSection -->
+</main>
+
+<!-- BEGIN: MainFooter -->
+<footer class="bg-white border-t border-slate-100 text-slate-600 text-sm py-14">
+<div class="max-w-7xl mx-auto px-6 sm:px-8" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-slate-100">
+<div class="space-y-4">
+<h4 class="text-lg font-bold text-slate-900">
+            Felix Andergassen Physiotherapie
+          </h4>
+<p class="text-slate-500 text-sm">Praxen in Frankfurt am Main und Obertshausen</p>
+<ul class="space-y-2.5 pt-2 text-xs sm:text-sm text-slate-600">
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://wa.me/4915129744965" target="_blank" rel="noopener noreferrer">+49 1512 9744965 (Nur WhatsApp Business Kontakt)</a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="mailto:felix@physioandergassen.de">
+                felix@physioandergassen.de
+              </a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+                Doctolib Terminvereinbarung
+              </a>
+</li>
+</ul>
+</div>
+<nav class="flex items-center gap-8 text-sm font-medium self-start lg:self-end">
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.0.18aZ-de.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.8V.18aZ.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+<a class="text-brand-petrol font-semibold" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+<!-- JavaScript für das Auf- und Zuklappen des mobilen Menüs -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+</body>
+</html>

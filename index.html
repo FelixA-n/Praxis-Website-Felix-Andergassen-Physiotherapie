@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="scroll-smooth stitch-anim-fade-in" lang="de">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Felix Andergassen Physiotherapie | Obertshausen &amp; Frankfurt am Main</title>
+<!-- Tailwind CSS v3 with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              petrol: '#295568',
+              'petrol-hover': '#1e3f4e',
+              'petrol-light': '#e9f1f5',
+              dark: '#1d323d',
+              mint: '#c6ebd9',
+              'mint-text': '#1d6f4c',
+              bg: '#f8fafc',
+              slate: '#5b6b75'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles for Precise Replication -->
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1d323d;
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+  </style>
+<style data-purpose="decorations">
+    .badge-mint {
+      background-color: #d2f0df;
+      color: #1f6448;
+    }
+    .card-shadow {
+      box-shadow: 0 4px 20px -2px rgba(41, 85, 104, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+    }
+    .card-hover {
+      transition: all 0.25s ease-in-out;
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -4px rgba(41, 85, 104, 0.1), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-brand-bg min-h-screen flex flex-col justify-between text-slate-800">
+
+<!-- BEGIN: MainHeader -->
+<header class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100" data-purpose="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+    
+    <!-- Left Group: Mobile Menu Toggle Button (3 Striche) + Logo -->
+    <div class="flex items-center gap-3">
+      <!-- Mobile Burger Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Menü öffnen" class="md:hidden p-2 text-brand-petrol hover:bg-slate-100 rounded-lg transition-colors focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </button>
+
+      <!-- Brand Logo & Standorte Hint -->
+      <div class="flex flex-col sm:flex-row sm:items-baseline sm:space-x-4">
+        <a class="text-lg sm:text-xl font-bold text-brand-petrol tracking-tight hover:opacity-90 transition-opacity" href="index.html">
+          Felix Andergassen Physiotherapie
+        </a>
+        <span class="text-xs font-medium text-slate-400 mt-0.5 sm:mt-0 tracking-normal flex items-center">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+          Standorte: Frankfurt am Main • Obertshausen
+        </span>
+      </div>
+    </div>
+
+    <!-- Navigation & Main CTA -->
+    <nav aria-label="Hauptnavigation" class="flex items-center space-x-8">
+      <ul class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-600">
+        <li><a class="text-brand-petrol font-semibold pb-1 border-b-2 border-brand-petrol" href="index.html">Home</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="leistungen.html">Leistungen</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="ueber-mich.html">Über mich</a></li>
+        <li><a class="hover:text-brand-petrol transition-colors" href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <a class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white bg-brand-petrol hover:bg-brand-petrol-hover transition shadow-sm" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+        Termin buchen
+      </a>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
+    <a class="block py-2 text-base font-semibold text-brand-petrol" href="index.html">Home</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="leistungen.html">Leistungen</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="ueber-mich.html">Über mich</a>
+    <a class="block py-2 text-base font-medium text-slate-700 hover:text-brand-petrol" href="kontakt.html">Kontakt</a>
+  </div>
+</header>
+<!-- END: MainHeader -->
+
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="pt-16 pb-20 overflow-hidden" data-purpose="hero-section">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Hero Text Content -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Pill / Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full badge-mint text-xs font-semibold tracking-wide">
+<span>Sektoraler Heilpraktiker für Physiotherapie</span>
+<span class="text-emerald-300">•</span>
+<span>Praxis an 2 Standorten – Frankfurt am Main &amp; Obertshausen</span>
+</div>
+<!-- Main Heading -->
+<h1 class="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-brand-dark leading-[1.18] tracking-tight">
+<span class="block font-medium text-slate-700">Individuelle</span>
+<span class="block text-brand-petrol font-bold">Physiotherapie</span>
+<span class="block text-brand-dark text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold mt-1.5">für Ihre Gesundheit</span>
+</h1>
+
+<div class="pt-2 flex flex-wrap gap-3">
+<a class="inline-flex items-center px-6 py-3 rounded-md text-sm font-semibold text-white bg-brand-petrol hover:bg-brand-petrol-hover transition shadow-sm" href="#standorte">
+  Standort auswählen &amp; Termin vereinbaren
+</a>
+<a class="inline-flex items-center px-5 py-3 rounded-md text-sm font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 transition" href="leistungen.html">
+  Alle Leistungen
+</a>
+</div>
+</div>
+<!-- Hero Image Felix Andergassen -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative w-full max-w-[360px]">
+<div class="absolute -inset-2 bg-gradient-to-br from-emerald-100 to-brand-bg rounded-3xl blur-lg opacity-60 -z-10"></div>
+<div class="relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl bg-slate-100 ring-4 ring-white border border-slate-200/60">
+<img alt="Felix Andergassen - Physiotherapeut" class="w-full h-full object-cover object-[center_12%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSnv4NXdF3shc3CdyxHi62L4kcYXTElCTHxXDfBM2eavQccB3UVecKLgRebB8_Xkka7n17UpMpM7XhqYZTZ5TCyW5OqrnJ07huRuMyxrC70FW3VFRc2Jx4Twot74g5fsMfrTOT96-QlArDDdgBXs5JwoxoXEeJPRcMUeDlz6UV54OPQqhaJ8e3HbBWPZfrH345fLrjLztQPS3Eiu2BtS5bqqLmhMILYPZLlKB-PStm0TlkFlDeFueBe55fZQdjgMUiZg">
+</div>
+</div>
+</div>
+</div>
+<!-- Mini Badges Row -->
+<div class="mt-20 pt-8 border-t border-slate-200/70 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto text-center" data-purpose="hero-features">
+<div class="flex items-center justify-center space-x-3 text-slate-600 text-sm font-medium">
+<svg class="w-5 h-5 text-brand-petrol shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Privatversicherte</span>
+</div>
+<div class="flex items-center justify-center space-x-3 text-slate-600 text-sm font-medium">
+<svg class="w-5 h-5 text-brand-petrol shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Selbstzahler</span>
+</div>
+<div class="flex items-center justify-center space-x-3 text-slate-600 text-sm font-medium">
+<svg class="w-5 h-5 text-brand-petrol shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<span>Sektoraler Heilpraktiker</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+
+<!-- BEGIN: ServicesSection -->
+<section class="py-24" data-purpose="services-section" id="leistungen">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Meine Leistungen</h2>
+<p class="text-slate-600 text-base leading-relaxed">
+  Ganzheitliche Behandlungsansätze, die auf Ihre individuellen Bedürfnisse und Beschwerdebilder zugeschnitten sind.
+</p>
+</div>
+<!-- 2x2 Service Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Card 1: Manuelle Therapie -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between min-h-[300px]">
+<div>
+<div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 text-brand-petrol">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Manuelle Therapie</h3>
+<p class="text-slate-600 text-sm leading-relaxed">
+  Gezielte Mobilisationstechniken zur Behandlung von Funktionsstörungen des Bewegungsapparates und zur Schmerzlinderung.
+</p>
+</div>
+</div>
+
+<!-- Card 2: Krankengymnastik -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between min-h-[300px]">
+<div>
+<div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 text-brand-petrol">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M4 8v8m2-9v10M18 7v10m2-9v8M6 12h12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Krankengymnastik</h3>
+<p class="text-slate-600 text-sm leading-relaxed">
+  Aktive Übungen zur Kräftigung, Dehnung und Verbesserung der Beweglichkeit.
+</p>
+</div>
+</div>
+
+<!-- Card 3: Lymphdrainage -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between min-h-[260px]">
+<div>
+<div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 text-brand-petrol">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Lymphdrainage</h3>
+<p class="text-slate-600 text-sm leading-relaxed">
+  Sanfte Entstauungstherapie zur Anregung des Lymphabflusses bei Ödemen.
+</p>
+</div>
+</div>
+
+<!-- Card 4: Sektoraler Heilpraktiker -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between min-h-[260px]">
+<div>
+<div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-6 text-brand-petrol">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 12h6m-3-3v6m-7.29 4.37A9.004 9.004 0 0012 21a9.004 9.004 0 008.29-5.63C21.43 11.24 19.34 4.54 12 3 4.66 4.54 2.57 11.24 3.71 15.37z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Sektoraler Heilpraktiker (Physiotherapie)</h3>
+<p class="text-slate-600 text-sm leading-relaxed">
+  Als sektoraler Heilpraktiker bin ich befugt, Diagnosen zu stellen und Therapien ohne vorherige ärztliche Verordnung durchzuführen. Dies ermöglicht Ihnen einen schnellen und unbürokratischen Zugang zur Behandlung.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+
+<!-- BEGIN: StandorteSection -->
+<section class="py-20 bg-slate-100/60 border-y border-slate-200/60" data-purpose="locations-section" id="standorte">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-3">Meine Standorte</h2>
+<p class="text-slate-600 text-base">Persönliche Betreuung in Frankfurt am Main und Obertshausen</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Standort Frankfurt am Main -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
+  Praxis Innenstadt
+</span>
+<span class="text-slate-400 text-xs font-mono uppercase tracking-wider">Standort 01</span>
+</div>
+<h3 class="text-2xl font-bold text-brand-dark mb-3">Frankfurt am Main</h3>
+<!-- Address -->
+<div class="flex items-start space-x-3 text-slate-600 mb-4">
+<svg class="w-5 h-5 text-brand-petrol mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<p class="font-medium text-slate-800">Hochstraße 31</p>
+<p class="text-sm text-slate-500">60313 Frankfurt am Main</p>
+</div>
+</div>
+<!-- Hours -->
+<div class="bg-slate-50 rounded-xl p-4 mb-8 border border-slate-100 text-sm space-y-1">
+<div class="flex justify-between text-slate-700 font-medium">
+<span>Montag:<br>Mittwoch:<br>Donnerstag:</span>
+<span>09:00 – 19:00 Uhr<br>09:00 – 19:00 Uhr<br>07:00 – 13:00 Uhr</span>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Standort Obertshausen -->
+<div class="bg-white rounded-2xl p-8 card-shadow card-hover border border-slate-100 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">Kreis Offenbach
+</span>
+<span class="text-slate-400 text-xs font-mono uppercase tracking-wider">Standort 02</span>
+</div>
+<h3 class="text-2xl font-bold text-brand-dark mb-3">Obertshausen</h3>
+<!-- Address -->
+<div class="flex items-start space-x-3 text-slate-600 mb-4">
+<svg class="w-5 h-5 text-brand-petrol mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<p class="font-medium text-slate-800">Samerwiesen 16</p>
+<p class="text-sm text-slate-500">63179 Obertshausen</p>
+</div>
+</div>
+<!-- Hours -->
+<div class="bg-slate-50 rounded-xl p-4 mb-8 border border-slate-100 text-sm space-y-1">
+<div class="flex justify-between text-slate-700 font-medium">
+<span>Dienstag:<br>Freitag:</span>
+<span>07:00 – 13:00 Uhr<br>07:00 – 16:00 Uhr</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: StandorteSection -->
+
+<!-- BEGIN: AppointmentSection -->
+<section class="py-20 bg-slate-100/60 border-t border-slate-200/60" data-purpose="appointment-section" id="kontakt">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-3">Bereit für Ihren ersten Termin?</h2>
+<p class="text-slate-600 text-base">
+  Ich lege Wert auf ausreichend Zeit für jeden Patienten. Vereinbaren Sie Ihren Termin bequem via Doctolib, E-Mail oder via WhatsApp Business.
+</p>
+</div>
+
+<!-- 3 Grid Cards -->
+<div class="max-w-4xl mx-auto">
+  <!-- Primary Doctolib Card -->
+  <div class="max-w-xl mx-auto mb-8 bg-white rounded-2xl p-8 card-shadow border border-slate-200/70 shadow-lg flex flex-col items-center text-center justify-between">
+    <div class="w-full flex flex-col items-center">
+      <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-brand-petrol mb-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-brand-dark mb-1">Doctolib</h3>
+      <p class="text-slate-500 text-sm mb-6">Termin direkt online buchen.</p>
+    </div>
+    <a class="w-full py-3.5 px-6 rounded-lg bg-brand-petrol hover:bg-brand-petrol-hover text-white text-base font-semibold transition shadow-sm inline-flex items-center justify-center" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+      Termin buchen
+    </a>
+  </div>
+
+  <!-- Secondary Grid: E-Mail & WhatsApp Business -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Card: E-Mail -->
+    <div class="bg-white rounded-2xl p-7 card-shadow border border-slate-100 flex flex-col items-center text-center justify-between">
+      <div class="w-full flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-brand-petrol mb-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-brand-dark mb-1">E-Mail</h3>
+        <p class="text-slate-500 text-sm mb-6">Für Termine.</p>
+      </div>
+      <a class="w-full py-3 px-4 rounded-lg border border-brand-petrol text-brand-petrol hover:bg-brand-petrol hover:text-white text-sm font-semibold transition truncate inline-flex items-center justify-center" href="mailto:felix@physioandergassen.de">
+        felix@physioandergassen.de
+      </a>
+    </div>
+
+    <!-- Card: WhatsApp Business -->
+    <div class="bg-white rounded-2xl p-7 card-shadow border border-slate-100 flex flex-col items-center text-center justify-between">
+      <div class="w-full flex flex-col items-center">
+        <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-brand-petrol mb-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-brand-dark mb-1">WhatsApp Business</h3>
+        <p class="text-slate-500 text-sm mb-6">Für Terminanfragen per Nachricht.</p>
+      </div>
+      <a class="w-full py-3 px-4 rounded-lg border border-brand-petrol text-brand-petrol hover:bg-brand-petrol hover:text-white text-sm font-semibold transition inline-flex items-center justify-center" href="https://wa.me/4915129744965" rel="noopener noreferrer" target="_blank">
+        +49 1512 9744965
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- END: AppointmentSection -->
+
+<!-- BEGIN: MapBannerSection -->
+<section class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12" data-purpose="map-banner">
+<div class="relative h-64 sm:h-72 w-full rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 bg-gradient-to-br from-slate-200 via-slate-300 to-slate-200 flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full object-cover opacity-45 pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,80 Q250,50 500,120 T1000,90" fill="none" stroke="#ffffff" stroke-width="14"></path>
+<path d="M-100,200 L1100,320" fill="none" stroke="#ffffff" stroke-width="8"></path>
+<path d="M150,0 L350,400" fill="none" stroke="#ffffff" stroke-width="12"></path>
+<path d="M700,0 L500,400" fill="none" stroke="#ffffff" stroke-width="10"></path>
+<circle cx="510" cy="170" fill="none" opacity="0.6" r="140" stroke="#ffffff" stroke-dasharray="8 8" stroke-width="4"></circle>
+</svg>
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-30">
+<svg class="w-24 h-24 text-slate-600" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 7 13 8 13s8-7.75 8-13c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"></path>
+</svg>
+</div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl px-4">
+  <a class="bg-white/95 backdrop-blur p-4 sm:p-5 rounded-2xl shadow-xl border border-white flex items-center justify-between gap-3 hover:scale-[1.02] transition-transform duration-200" href="https://maps.google.com/?q=Hochstraße+31+60313+Frankfurt+am+Main" rel="noopener noreferrer" target="_blank">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-xl bg-brand-petrol text-white flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-brand-dark">Anfahrt Frankfurt am Main</h4>
+        <p class="text-xs text-slate-500">Hochstraße 31, 60313 Frankfurt am Main</p>
+      </div>
+    </div>
+    <div class="text-slate-400">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </div>
+  </a>
+  <a class="bg-white/95 backdrop-blur p-4 sm:p-5 rounded-2xl shadow-xl border border-white flex items-center justify-between gap-3 hover:scale-[1.02] transition-transform duration-200" href="https://maps.google.com/?q=Samerwiesen+16+63179+Obertshausen" rel="noopener noreferrer" target="_blank">
+    <div class="flex items-center gap-3.5">
+      <div class="w-11 h-11 rounded-xl bg-brand-petrol text-white flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+          <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold text-brand-dark">Anfahrt Obertshausen</h4>
+        <p class="text-xs text-slate-500">Samerwiesen 16, 63179 Obertshausen</p>
+      </div>
+    </div>
+    <div class="text-slate-400">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </div>
+  </a>
+</div>
+</div>
+</section>
+<!-- END: MapBannerSection -->
+</main>
+
+<!-- BEGIN: MainFooter -->
+<footer class="bg-white border-t border-slate-100 text-slate-600 text-sm py-14">
+<div class="max-w-7xl mx-auto px-6 sm:px-8" style="max-width: 1200px; margin-left: auto; margin-right: auto;">
+<div class="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-slate-100">
+<div class="space-y-4">
+<h4 class="text-lg font-bold text-slate-900">
+  Felix Andergassen Physiotherapie
+</h4>
+<p class="text-slate-500 text-sm">Praxen in Frankfurt am Main und Obertshausen</p>
+<ul class="space-y-2.5 pt-2 text-xs sm:text-sm text-slate-600">
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://wa.me/4915129744965" target="_blank" rel="noopener noreferrer">+49 1512 9744965 (Nur WhatsApp Business Kontakt)</a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="mailto:felix@physioandergassen.de">
+  felix@physioandergassen.de
+</a>
+</li>
+<li class="flex items-center gap-2.5">
+<svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-brand-petrol transition-colors" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" rel="noopener noreferrer" target="_blank">
+  Doctolib Terminvereinbarung
+</a>
+</li>
+</ul>
+</div>
+<nav class="flex items-center gap-8 text-sm font-medium self-start lg:self-end">
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.0.18aZ-de.html" target="_blank" rel="noopener noreferrer">Impressum</a>
+<a class="text-slate-600 hover:text-brand-petrol transition-colors" href="https://itrk.legal/1z14.8V.18aZ.html" target="_blank" rel="noopener noreferrer">Datenschutz</a>
+<a class="text-brand-petrol font-semibold" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+
+<!-- JavaScript für das Auf- und Zuklappen des mobilen Menüs -->
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+</body>
+</html>
